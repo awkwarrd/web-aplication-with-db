@@ -44,19 +44,19 @@ public class MainScreenController {
 
     @GetMapping("/report")
     public void generateReport(HttpServletResponse response) throws IOException {
-        // Пример: создать простой текстовый отчет
+
         String report = "Simple Report\n"
                 + "Users Count: " + userService.countUsers() + "\n"
                 + "Transactions Count: " + transactionService.countTransactions();
         System.out.println(report);
-        // Сохранение отчета в базу данных
+
         Reports newReport = new Reports();
         newReport.setName("Simple Report");
         newReport.setGeneratedAt(LocalDateTime.now());
         newReport.setContent(report);
         reportsService.saveReport(newReport);
         System.out.println(report);
-        // Отправка файла пользователю
+
         response.setContentType("text/plain");
         response.setHeader("Content-Disposition", "attachment;filename=report.txt");
         response.getOutputStream().write(report.getBytes());

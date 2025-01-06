@@ -12,7 +12,6 @@
 <div class="container mt-5">
     <h2>Transaction Management</h2>
 
-    <!-- Таблица с пользователями -->
     <table class="table table-striped">
         <thead>
         <tr>
@@ -42,7 +41,6 @@
         </tbody>
     </table>
 
-    <!-- Форма добавления нового пользователя -->
     <form th:action="@{/transactions}" th:object="${transactionDto}" method="post" class="mt-4">
         <div class="mb-3">
             <label for="userName" class="form-label">Name</label>

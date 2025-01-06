@@ -21,7 +21,6 @@ public class Reports {
     @Column(nullable = false)
     private String content;
 
-    // Getters and Setters
     public Long getId() {
         return id;
     }

@@ -37,7 +37,6 @@ public class Goals {
 
     }
 
-    // Getters and setters
     public Long getId() {
         return id;
     }

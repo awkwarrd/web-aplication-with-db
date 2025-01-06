@@ -1,12 +1,10 @@
 package com.example.bd_project.services;
 
-import com.example.bd_project.model.Goals;
 import com.example.bd_project.model.Reports;
 import com.example.bd_project.repository.ReportsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Service

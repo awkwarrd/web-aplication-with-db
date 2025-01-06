@@ -12,7 +12,6 @@
 <div class="container mt-5">
     <h2>Category Management</h2>
 
-    <!-- Таблица с пользователями -->
     <table class="table table-striped">
         <thead>
         <tr>
@@ -38,7 +37,6 @@
         </tbody>
     </table>
 
-    <!-- Форма добавления нового пользователя -->
     <form th:action="@{/category}" th:object="${categoryDto}" method="post" class="mt-4">
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>

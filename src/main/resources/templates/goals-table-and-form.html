@@ -12,7 +12,6 @@
 <div class="container mt-5">
     <h2>Goals Management</h2>
 
-    <!-- Таблица с пользователями -->
     <table class="table table-striped">
         <thead>
         <tr>
@@ -43,7 +42,6 @@
         </tbody>
     </table>
 
-    <!-- Форма добавления нового пользователя -->
     <form th:action="@{/goals}" th:object="${goalDto}" method="post" class="mt-4">
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>

@@ -52,13 +52,4 @@ public class UserFormController {
         userService.updateUser(id, userDto);
         return "redirect:/users";
     }
-
-    /*@GetMapping("/report")
-    public String showUsersWithGoalsAndTransactions(@RequestParam("userName") String userName,  Model model) {
-        System.out.println(userName);
-        List<Object[]> data = userService.getUsersWithGoalsAndTransactionSums(userName);
-        model.addAttribute("userGoalsTransactions", data);
-        return "users-goals-transactions";
-    }
-    */
 }
