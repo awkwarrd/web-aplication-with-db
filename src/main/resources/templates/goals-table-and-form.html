@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+        <html xmlns:th="http://www.thymeleaf.org">
+        <head>
+        <title>Goals Management</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Goals Management</h2>
+
+    <!-- Таблица с пользователями -->
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>User</th>
+            <th>Progress</th>
+            <th>Target Amount</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="goals : ${goal}">
+            <td th:text="${goals.id}">1</td>
+            <td th:text="${goals.name}">Money for PS4</td>
+            <td th:text="${goals.user.name}">Milad Al Masri</td>
+            <td th:text="${goals.progress}">200</td>
+            <td th:text="${goals.targetAmount}">300</td>
+            <td>
+                <form th:action="@{/goals/{id}(id=${goals.id})}" method="post">
+                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                </form>
+                <!-- Кнопка для редактирования -->
+                <a th:href="@{/goals/edit/{id}(id=${goals.id})}" class="btn btn-warning btn-sm">Edit</a>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- Форма добавления нового пользователя -->
+    <form th:action="@{/goals}" th:object="${goalDto}" method="post" class="mt-4">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" name="name" th:field="*{name}" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="user" class="form-label">User</label>
+            <input type="text" id="user" name="user" th:field="*{userName}" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="targetAmount" class="form-label">Target Amount</label>
+            <input type="number" id="targetAmount" name="targetAmount" th:field="*{targetAmount}" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="progress" class="form-label">Progress</label>
+            <input type="numer" id="progress" name="progress" th:field="*{progress}" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Goals</button>
+    </form>
+</div>
+</body>
+</html>
+</title>
+</head>
+<body>
+
+</body>
+</html>
